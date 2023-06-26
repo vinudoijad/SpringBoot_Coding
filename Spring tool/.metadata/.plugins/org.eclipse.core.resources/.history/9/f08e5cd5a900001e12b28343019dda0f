@@ -1,0 +1,21 @@
+package com.example.service;
+
+import java.util.List;
+
+import com.example.model.User;
+
+public interface UserService {
+
+	// save user
+	public User saveUserDetails(User user);
+
+	// update user
+	public void updateUserDetails(String city, User user);
+
+	// get user details by UserId
+	public User getUserDetails(Integer UserId);
+
+	// get all details of user
+	public List<User> fetchAllUserDetails();
+
+}

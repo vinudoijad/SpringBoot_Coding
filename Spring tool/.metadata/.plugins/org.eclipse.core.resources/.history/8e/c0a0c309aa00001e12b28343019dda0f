@@ -1,0 +1,47 @@
+package com.example.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.model.User;
+import com.example.repository.UserRepository;
+import com.example.service.UserService;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	// inject the User Repository
+	@Autowired
+	private UserRepository userRepository;
+
+	@Override
+	public User saveUserDetails(User user) {
+		return userRepository.save(user);
+
+	}
+
+	
+
+	@Override
+	public User getUserDetails(Integer UserId) {
+		return userRepository.findById(UserId);
+
+	}
+
+	@Override
+	public List<User> fetchAllUserDetails() {
+		return (List<User>) userRepository.findAll();
+
+	}
+
+
+
+	@Override
+	public User updateUserDetails(Integer UserId, User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
